@@ -94,13 +94,15 @@ function game() {
     const playerSelection = prompt().toUpperCase();
     const computerSelection = computerPlay().toUpperCase();
     playRound(playerSelection, computerSelection);
-    if ("Computer Win!") {
-      computerScore++;
-    } else {
-      playerScore++;
-      }
-    }
-    return (computerScore > playerScore) ? 'Computer is the Winner!!' :'Player is the winner!'
+  }
+  if ("Computer Win!") {
+    computerScore++;
+  } else {
+    playerScore++;
+  }
+  return computerScore > playerScore
+    ? "Computer is the Winner!!"
+    : "Player is the winner!";
 }
 
 game();
