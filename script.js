@@ -67,42 +67,56 @@ console.log(condition());
 
 //(Main JavaScript Project):
 function computerPlay() {
-  let options = ["Rock", "Paper", "Scissors"][Math.floor(Math.random() * 3)];
-  return options;
+  let options = ["Rock", "Paper", "Scissors"];
+  let random = Math.floor(Math.random() * 3);
+  return options[random];
 }
-console.log(computerPlay().toUpperCase());
 
 function playRound(playerSelection, computerSelection) {
+  console.log(`Player**: ${playerSelection}`);
+  console.log(`Computer**: ${computerSelection}`);
   if (playerSelection === computerSelection) {
     return "Draw!";
-  } else if (playerSelection == "ROCK") {
-    return computerSelection == "PAPER" ? "Player Win!" : "Computer Win!";
-  } else if (playerSelection == "PAPER") {
-    return computerSelection == "SCISSORS" ? "Computer Win!" : "Player Win!";
-  } else if (playerSelection == "SCISSORS") {
-    return computerSelection == "ROCK" ? "Computer Win!" : "Player Win!";
+  } else if (
+    (computerSelection === "ROCK" && playerSelection === "PAPER") ||
+    (computerSelection === "PAPER" && playerSelection === "SCISSORS") ||
+    (computerSelection === "SCISSORS" && playerSelection === "ROCK")
+  ) {
+    return "Player Win!";
+  } else if (
+    (computerSelection === "SCISSORS" && playerSelection === "PAPER") ||
+    (computerSelection === "PAPER" && playerSelection === "ROCK") ||
+    (computerSelection === "ROCK" && playerSelection === "SCISSORS")
+  ) {
+    return "Computer Win!";
+  } else {
+    return "Please enter valid input.";
   }
 }
-// const playerSelection = prompt().toUpperCase();
-// const computerSelection = computerPlay().toUpperCase();
-// console.log(playRound(playerSelection, computerSelection));
 
 function game() {
   let computerScore = 0,
     playerScore = 0;
+
   for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt().toUpperCase();
     const computerSelection = computerPlay().toUpperCase();
-    playRound(playerSelection, computerSelection);
+    const playerSelection = prompt().toUpperCase();
+    let gameRound = playRound(playerSelection, computerSelection);
+    console.log(gameRound);
+    let winner = "computer win!";
+    if (gameRound === winner) {
+      computerScore++;
+    } else {
+      playerScore++;
+    }
   }
-  if ("Computer Win!") {
-    computerScore++;
+  if (computerScore === playerScore) {
+    return "HURRAH!! DRAW!";
+  } else if (computerScore > playerScore) {
+    return "Oh! Computer Win!";
   } else {
-    playerScore++;
+    return "WELL DONE!! Player Win!!";
   }
-  return computerScore > playerScore
-    ? "Computer is the Winner!!"
-    : "Player is the winner!";
 }
 
-game();
+console.log(game());
