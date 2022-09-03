@@ -54,16 +54,22 @@ console.log(condition());
 
 //b) Write a JavaScript program that checks whether an integer is an even or an odd number.
 
-// function oddEven() {
-//   let num = prompt();
-//   if (num % 2 === 0) {
-//     return "The number is Even";
-//   } else {
-//     return "The number is Odd";
-//   }
-// }
+function oddEven() {
+  let num = prompt();
+  if (num % 2 === 0) {
+    return "The number is Even";
+  } else {
+    return "The number is Odd";
+  }
+}
 
-// console.log(oddEven());
+oddEven()
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
 
 //(Main JavaScript Project):
 function computerPlay() {
