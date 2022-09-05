@@ -106,7 +106,7 @@ function game() {
 
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay().toUpperCase();
-    const playerSelection = prompt().toUpperCase();
+    // const playerSelection = prompt().toUpperCase();
     let gameRound = playRound(playerSelection, computerSelection);
     console.log(gameRound);
     let winner = "Computer Win!";
@@ -129,3 +129,22 @@ function game() {
 }
 
 console.log(game());
+
+
+
+
+/*              */
+
+// const element = document.createElement(<p>"Hey I'm red!"</p>); 
+// element.style.color = 'red';
+// const heading = document.createElement(<h3>"I'm a blue h3!"</h3>); 
+// heading.style.color = 'blue';
+
+// const newDiv = document.createElement("div");
+// const newHeading = document.createElement(<h1>Hello!</h1>)
+// const button = document.createElement(<button>Click me</button>)
+// newDiv.appendChild(newHeading);
+// newDiv.appendChild(button)
+// const main = document.querySelector('#main');
+
+// main.appendChild(newDiv);
