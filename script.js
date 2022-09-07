@@ -118,18 +118,18 @@ function finalWinner(winner, computerSelection) {
     score.computerScore++;
     result.innerHTML = `     
      <h1 class="text-win"> Computer Win</h1>
-     <img src="./images/${computerSelection}.svg" id= ${computerSelection} />
+     <img src="./images/${computerSelection.toLowerCase()}.svg" id= ${computerSelection} />
             <p>Computer Chose <strong>${computerSelection}</p>`;
   } else if (winner === "Player Win!") {
     score.playerScore++;
     result.innerHTML = `     
      <h1 class="text-win"> Player Win</h1>
-     <img src="./images/${computerSelection}.svg" id= ${computerSelection} />
+     <img src="./images/${computerSelection.toLowerCase()}.svg" id= ${computerSelection} />
      <p>Computer Chose <strong>${computerSelection}</strong></p>`;
   } else {
     result.innerHTML = `     
      <h1 class="text-win"> It's Draw!!</h1>
-     <img src="./images/${computerSelection}.svg" id= ${computerSelection} />
+     <img src="./images/${computerSelection.toLowerCase()}.svg" id= ${computerSelection} />
      <p>Computer Chose <strong>${computerSelection}</strong></p>`;
   }
   scoreBoard.innerHTML = `
